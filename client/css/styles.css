@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.todoApp {
+  width: 640px;
+  height: auto;
+  margin : 0 auto;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+#new-todo {
+  width: 100%;
+}

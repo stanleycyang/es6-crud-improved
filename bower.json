@@ -1,0 +1,24 @@
+{
+  "name": "crud-flux",
+  "version": "0.0.0",
+  "homepage": "https://github.com/syang019/es6-crud-improved",
+  "authors": [
+    "syang019 <stanley@stanleycyang.com>"
+  ],
+  "description": "CRUD with React",
+  "keywords": [
+    "NPM",
+    "React"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

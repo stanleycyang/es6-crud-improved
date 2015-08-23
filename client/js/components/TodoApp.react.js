@@ -35,7 +35,7 @@ export default class TodoApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='todoApp'>
         <Header />
         <MainSection
           allTodos={this.state.allTodos}
