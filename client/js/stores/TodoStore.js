@@ -3,6 +3,7 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import TodoConstants from '../constants/TodoConstants';
 import { EventEmitter } from 'events';
+import objectAssign from 'object-assign';
 
 const CHANGE_EVENT = 'change';
 
@@ -61,7 +62,7 @@ class TodoStore extends EventEmitter {
       case TodoConstants.TODO_UPDATE_TEXT:
         text = action.text.trim();
         if (text !== '') {
-          update(action.id, {text: text});
+          this.update(action.id, {text: text});
           this.emitChange();
         }
       break;
@@ -86,7 +87,7 @@ class TodoStore extends EventEmitter {
   // @param {string} id
   // @param Pobject} updates an object literal
   update(id, updates) {
-    this.todos[id] = updates;
+    this.todos[id] = objectAssign({}, this.todos[id], updates);
   }
 
   updateAll(updates) {
@@ -101,7 +102,7 @@ class TodoStore extends EventEmitter {
   }
 
   // Delete all the complete todos
-  destroyComplete() {
+  destroyCompleted() {
     for (let id in this.todos) {
       if(this.todos[id].complete) {
         this.destroy(id);
@@ -119,8 +120,8 @@ class TodoStore extends EventEmitter {
       if(!this.todos[id].complete) {
         return false;
       }
-      return true;
     }
+    return true;
   }
 
   // Get the entire collection of todos

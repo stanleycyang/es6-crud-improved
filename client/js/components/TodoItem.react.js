@@ -44,7 +44,9 @@ export default class TodoItem extends React.Component {
           <label onDoubleClick={this.onDoubleClick.bind(this)}>
             {todo.text}
           </label>
-          <button className='destroy' onClick={this.onDestroyClick} />
+          <button className='destroy' onClick={this.onDestroyClick.bind(this)}>
+            Delete
+          </button>
         </div>
         {input}
       </li>
